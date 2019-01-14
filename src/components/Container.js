@@ -30,7 +30,7 @@ class Container extends Component {
         this.handleChange = this.handleChange.bind(this)
         this.handleSubmit = this.handleSubmit.bind(this)
         // this.addStudent = this.addStudent.bind(this)
-        // this.editStudent = this.editStudent.bind(this)
+        this.editStudent = this.editStudent.bind(this)
     }
 
     handlePrevClick() {
@@ -72,9 +72,10 @@ class Container extends Component {
         this.setState({ students: arr })
     }
 
-    editStudent(index) {
+    editStudent() {
         // edit lol
-        
+        let obj = this.state.students[this.state.currentIndex]
+        console.log(obj)
     }
 
     deleteStudent() {
@@ -102,7 +103,7 @@ class Container extends Component {
                 />
                 <div className={styles.Controls}>
                     <button onClick={this.handlePrevClick}>&lt; prev</button>
-                    {/* <button onClick={this.showForm}>edit</button> */}
+                    <button onClick={this.editStudent}>edit</button>
                     <button onClick={this.deleteStudent}>delete</button>
                     <button onClick={this.showForm}>new</button>
                     <button onClick={this.handleNextClick}>next &gt;</button>
